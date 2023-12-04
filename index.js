@@ -20,7 +20,7 @@ app.get('/dinosaurs/:environment', async (req, res) => {
 
 // Add a dinosaur to list
 app.post('/dinosaurs', async (req, res) => {
-  const addOneDinosaur = await dinosaurs.insertOne({name: req.body.name, environment: req.body.environment, diet: req.body.diet, description: req.body.description})
+  const addOneDinosaur = await dinosaurs.insertOne(req.body)
   res.status(201).send(addOneDinosaur)
 });
 
